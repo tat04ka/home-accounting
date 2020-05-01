@@ -1,0 +1,13 @@
+<div class="card-title">Exchange Rates</div>
+<div class="card-content">
+  <div class="header">
+    <div class="header-item">Currency</div>
+    <div class="header-item">Rate</div>
+    <div class="header-item">Date</div>
+  </div>
+  <div class="row" *ngFor="let currency of [{name: 'USD', value: usdRate}, {name: 'EUR', value: eurRate}]">
+    <div class="item">{{currency.name}}</div>
+    <div class="item">{{currency.value | number:'1.2-2'}}</div>
+    <div class="item">{{date | date:mediumDate}}</div>
+  </div>
+</div>

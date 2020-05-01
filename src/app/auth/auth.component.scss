@@ -1,0 +1,30 @@
+.auth {
+  background-color: #667380;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.card {
+  margin: auto;
+  width: 450px;
+}
+
+.card-body {
+  border-top: 1px solid #52bcd3;
+  display: flex;
+  justify-content: center;
+}
+
+.ui-card-header {
+  display: flex;
+  color: #97a4b1;
+  padding: 10px;
+  font-size: 26px;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.ui-card-body {
+  padding: 0;
+}

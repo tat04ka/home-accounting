@@ -1,0 +1,22 @@
+$color: #52bcd3;
+.ui-button-raised {
+  margin-right: auto;
+  background-color: $color;
+  border: 1px solid $color;
+  min-width: 200px;
+}
+
+:host{
+  ::ng-deep .ui-dropdown {
+    min-width: 100%;
+  }
+
+  ::ng-deep .ui-radiobutton .ui-radiobutton-box.ui-state-active {
+    border-color: $color;
+    background-color: $color;
+  }
+  
+  ::ng-deep .ui-radiobutton-label {
+    color: #4f5f6f;
+  }
+}

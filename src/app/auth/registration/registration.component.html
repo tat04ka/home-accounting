@@ -1,0 +1,35 @@
+<p class="text-container text-highlight">Register</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form-container">
+  <span class="ui-float-label">
+    <input id="email" type="text" pInputText formControlName="email" size="30">
+    <label for="email">Email</label>
+  </span>
+  <div *ngIf="form.get('email').invalid && form.get('email').touched">
+    <span class="error-message" *ngIf="form.get('email')['errors']['required']">Email is required</span>
+    <span class="error-message" *ngIf="form.get('email')['errors']['email']">Incorrect email format</span>
+    <span class="error-message" *ngIf="form.get('email')['errors']['isUsed']">This email is already used</span>
+  </div>
+  <span class="ui-float-label">
+    <input id="password" type="password" pInputText formControlName="password" size="30">
+    <label for="password">Password</label>
+  </span>
+  <div *ngIf="form.get('password').invalid && form.get('password').touched">
+    <span class="error-message" *ngIf="form.get('password')['errors']['required']">Password is required</span>
+    <span class="error-message" 
+      *ngIf="form.get('password')['errors']['minlength'] && form.get('password')['errors']['minlength']['requiredLength']">
+      Password should be at least {{form.get('password')['errors']['minlength']['requiredLength']}} symbols length
+    </span>
+  </div>
+  <span class="ui-float-label">
+    <input id="name" type="text" pInputText formControlName="name" size="30">
+    <label for="name">Name</label>
+  </span>
+  <div *ngIf="form.get('name').invalid && form.get('name').touched">
+    <span class="error-message" *ngIf="form.get('name')['errors']['required']">Name is required</span>
+    <span class="error-message" 
+      *ngIf="form.get('name')['errors']['minlength'] && form.get('name')['errors']['minlength']['requiredLength']">
+      Name should be at least {{form.get('name')['errors']['minlength']['requiredLength']}} symbols length</span>
+  </div>
+  <button pButton type="submit" label="Register" class="ui-button-raised" [disabled]="form.invalid"></button>
+  <p class="text-container">or <a class="link" routerLink="/login">Log in</a></p>
+</form>

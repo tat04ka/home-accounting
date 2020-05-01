@@ -1,1 +1,115 @@
 /* You can add global styles to this file, and also import other style files */
+$error-color: #a80000;
+$success-color:#8fbc8f;
+$text-color: #4f5f6f;
+$white: #fff;
+$card-background: #d7dde4;
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.auth-form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.ui-float-label {
+  margin-top: 30px;
+}
+
+.text-container {
+  color: #97a4b1;
+  text-align: center;
+  & .link {
+    color: #52bcd3;
+  }
+  &.text-highlight {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 15px;
+  }
+}
+
+.section {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .card {
+    padding: 10px;
+    background-color: $white;
+    flex-grow: 1;
+    margin: 10px 20px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+}
+
+.card-title {
+  font-size: 1.1em;
+  color: $text-color;
+  font-weight: 600;
+  display: flex;
+  border-bottom: 1px solid $card-background;
+  padding-bottom: 10px;
+  padding-left: 10px;
+
+  .left-align {
+    margin-left: auto;
+  }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  .label {
+    font-weight: 600;
+    color: $text-color;
+    margin-bottom: 0.5em;
+  }
+
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+}
+
+.title-block {
+  display: flex;
+  align-items: center;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid $card-background;
+
+  .title {
+    font-weight: 600;
+    font-size: 1.5em;
+    color: $text-color;
+  }
+}
+
+.alert {
+  color: $white;
+  text-align: center;
+  border-radius: 4px;
+  line-height: 32px;
+  margin: 10px 20px;
+  &.alert-danger {
+    background-color: $error-color;
+  }
+  &.alert-success {
+    background-color: $success-color;
+  }
+}
+
+.error-message {
+  font-size: 0.8em;
+  color: $error-color;
+}

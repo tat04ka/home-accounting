@@ -1,0 +1,15 @@
+<header class="header">
+  <div class="header-date">{{date | date:'mediumDate'}}</div>
+  <div class="header-nav">
+    <div appDropdown>
+      <a class="dropdown-toggle" role="button"><span class="name" [appHover]="'#52bcd3'">Hello, {{user.name}}</span></a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item divider" [routerLink]="['/system', 'records']">
+          <i class="fas fa-cog"></i>Add record</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" (click)="logout()">
+        <i class="fas fa-power-off"></i>Log out</a>
+      </div>
+    </div>
+  </div>
+</header>

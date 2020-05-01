@@ -1,0 +1,14 @@
+<div class="title-block">
+  <span class="title">Add Records</span>
+</div>
+<div class="section" *ngIf="isLoaded">
+  <div class="card">
+    <app-add-event [categories]="categories"></app-add-event>
+  </div>
+  <div class="card">
+    <app-add-category (onCategoryAdd)="newCategoryAdded($event)"></app-add-category>
+  </div>
+  <div class="card">
+    <app-edit-category [categories]="categories" (onCategoryEdit)="categoryUpdated($event)"></app-edit-category>
+  </div>
+</div>

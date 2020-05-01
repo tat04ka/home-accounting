@@ -1,0 +1,12 @@
+<div class="title-block">
+  <span class="title">Account Summary</span>
+  <div class="refresh" (click)="refresh()"><i class="fas fa-sync-alt"></i></div>
+</div>
+<div class="section" *appWhile="isLoaded">
+  <div class="card bill-card">
+    <app-account [account]="account" [usdRate]="usdRate" [eurRate]="eurRate"></app-account>
+  </div>
+  <div class="card bill-card card-exchange">
+    <app-exchange-rates [usdRate]="usdRate" [eurRate]="eurRate"></app-exchange-rates>
+  </div>
+</div>

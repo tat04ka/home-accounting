@@ -1,0 +1,89 @@
+{
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "12345678",
+      "name": "test",
+      "id": 1
+    },
+    {
+      "email": "test123@gmail.com",
+      "password": "123321",
+      "name": "123321",
+      "id": 2
+    }
+  ],
+  "account": {
+    "value": 10000,
+    "currency": "UAH"
+  },
+  "categories": [
+    {
+      "name": "Home",
+      "capacity": 1500,
+      "id": 1
+    },
+    {
+      "name": "Food",
+      "capacity": 10000,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Car",
+      "capacity": 7000
+    },
+    {
+      "name": "test90",
+      "capacity": 5,
+      "id": 4
+    },
+    {
+      "name": "fdr",
+      "capacity": 80,
+      "id": 5
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "type": "income",
+      "amount": 1250,
+      "category": 2,
+      "date": "01.04.2020 19:49:02",
+      "description": "Friends gave me food"
+    },
+    {
+      "id": 2,
+      "type": "outcome",
+      "amount": 1300,
+      "category": 1,
+      "date": "01.04.2020 19:49:02",
+      "description": "Bought dishwasher"
+    },
+    {
+      "type": "income",
+      "amount": 1480,
+      "category": 2,
+      "date": "11.04.2020 14:00:48",
+      "id": 3,
+      "description": "Free food. Spent bonuses for it"
+    },
+    {
+      "type": "outcome",
+      "amount": 2470,
+      "category": 2,
+      "date": "17.04.2020 14:00:58",
+      "id": 4,
+      "description": "Bought food for a week"
+    },
+    {
+      "type": "outcome",
+      "amount": 4000,
+      "category": 3,
+      "date": "20.04.2020 14:01:58",
+      "id": 5,
+      "description": "Fuel"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<div class="card-title">Account</div>
+<div class="card-content">
+  <div class="currency-account">
+    <span class="currency">UAH:</span>
+    <span class="amount">{{account.value | formatNumber:'1.2-2'}}</span>
+  </div>
+  <div class="currency-account">
+    <span class="currency">USD:</span>
+    <span class="amount">{{account.value / usdRate | formatNumber:'1.2-2'}}</span>
+  </div>
+  <div class="currency-account">
+    <span class="currency">EUR: </span>
+    <span class="amount">{{account.value / eurRate | formatNumber:'1.2-2'}}</span>
+  </div>
+</div>

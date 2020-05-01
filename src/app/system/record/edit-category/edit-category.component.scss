@@ -1,0 +1,13 @@
+$color: #52bcd3;
+.ui-button-raised {
+  margin-right: auto;
+  background-color: $color;
+  border: 1px solid $color;
+  min-width: 200px;
+}
+
+:host{
+  ::ng-deep .ui-dropdown {
+    min-width: 100%;
+  }
+}

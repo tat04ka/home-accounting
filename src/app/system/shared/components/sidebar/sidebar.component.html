@@ -1,0 +1,33 @@
+<aside class="sidebar">
+  <div class="sidebar-header">My Accounting</div>
+  <div class="sidebar-menu">
+    <div
+      class="menu-item"
+      [routerLink]="['/system', 'bill']"
+      routerLinkActive="active">
+      <i class="fas fa-calculator"></i>
+      Bill
+    </div>
+    <div
+      class="menu-item"
+      [routerLink]="['/system', 'records']"
+      routerLinkActive="active">
+      <i class="fas fa-edit"></i>
+      Records
+    </div>
+    <div
+      class="menu-item"
+      [routerLink]="['/system', 'history']"
+      routerLinkActive="active">
+      <i class="fas fa-file-archive"></i>
+      History
+    </div>
+    <div
+      class="menu-item"
+      [routerLink]="['/system', 'planning']"
+      routerLinkActive="active">
+      <i class="fas fa-balance-scale"></i>
+      Planning
+    </div>
+  </div>
+</aside>

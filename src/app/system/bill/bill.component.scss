@@ -1,0 +1,31 @@
+.title-block {
+  .refresh {
+    margin-left: auto;
+    color: #52bcd3;
+    border: 1px solid #52bcd3;
+    cursor: pointer;
+
+    :hover {
+      color: #fff;
+      background-color: #52bcd3;
+    }
+
+    i {
+      padding: 10px;
+    }
+  }
+}
+
+.section {
+  .card {
+    &.bill-card {
+      display: flex;
+      flex-direction: column;
+
+      &.card-exchange {
+        flex-grow: 2;
+      }
+    }
+  }
+}
+

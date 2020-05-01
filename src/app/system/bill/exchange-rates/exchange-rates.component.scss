@@ -1,0 +1,31 @@
+@mixin item {
+  flex: 1;
+  text-align: center;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+
+  .header, .row {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    border-bottom: 1px solid #52bcd3;
+    color: #4f5f6f;
+    padding-bottom: 5px;
+    font-size: 1.1em;
+  }
+
+  .header {
+    font-weight: 600;
+
+    .header-item {
+      @include item;
+    }
+  }
+
+  .row .item {
+    @include item;
+  }
+}

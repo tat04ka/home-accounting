@@ -1,0 +1,22 @@
+.card-content {
+  display: flex;
+  flex-direction: column;
+
+  .currency-account {
+    display: flex;
+    margin: 20px 0;
+    border-bottom: 1px solid #52bcd3;
+    color: #4f5f6f;
+    padding-bottom: 5px;
+    font-size: 1.1em;
+
+    .currency {
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    .amount {
+      margin-left: 20px;
+    }
+  }
+}

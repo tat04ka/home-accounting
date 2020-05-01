@@ -1,0 +1,46 @@
+<span class="card-title">Edit Category</span>
+<div
+  *ngIf="message.text"
+  class="alert alert-{{message.type}}">
+  {{ message.text }}
+</div>
+<form class="card-content" #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <div class="form-control">
+    <label class="label" for="category">Category</label>
+    <p-dropdown
+      id="category"
+      [options]="categoriesOptions"
+      dropdownIcon="fas fa-sort-down"
+      #category="ngModel"
+      name="category"
+      [(ngModel)]="currentCategoryId"
+      (ngModelChange)="setCategory()"
+      required></p-dropdown>
+  </div>
+  <div class="form-control">
+    <label class="label">Name</label>
+    <input
+      type="text"
+      size="30"
+      pInputText
+      required
+      #name="ngModel"
+      name="name"
+      [ngModel]="currentCategory.name">
+    <span class="error-message" *ngIf="name.invalid && name.touched">Name is required</span>
+  </div>
+  <div class="form-control">
+    <label class="label">Limit</label>
+    <input
+      type="number"
+      size="30"
+      pInputText
+      #limit="ngModel"
+      name="limit"
+      [ngModel]="currentCategory.capacity"
+      min="0">
+      <span class="error-message" *ngIf="limit.invalid && limit.touched">Limit is required</span>
+  </div>
+  <button pButton type="submit" label="Edit" class="ui-button-raised" [disabled]="form.invalid">
+  </button>
+</form>

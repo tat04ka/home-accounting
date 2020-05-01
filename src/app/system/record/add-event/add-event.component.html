@@ -1,0 +1,53 @@
+<span class="card-title">Add Event</span>
+<div
+  *ngIf="message.text"
+  class="alert alert-{{message.type}}">
+  {{ message.text }}
+</div>
+<form class="card-content" #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <div class="form-control">
+    <label class="label">Category</label>
+    <p-dropdown
+      id="category"
+      [options]="categoriesOptions"
+      dropdownIcon="fas fa-sort-down"
+      name="category"
+      [(ngModel)]="currentCategoryId"
+      required></p-dropdown>
+  </div>
+  <label class="label">Type</label>
+  <div class="form-control" *ngFor="let type of types">
+    <p-radioButton
+      name="type"
+      [value]="type.type"
+      [label]="type.label"
+      [ngModel]="'outcome'"
+      required></p-radioButton>
+  </div>
+  <div class="form-control">
+    <label class="label">Amount</label>
+    <input
+      type="number"
+      size="30"
+      pInputText
+      name="amount"
+      #amount="ngModel"
+      [ngModel]="0"
+      min="0"
+      required>
+      <span class="error-message" *ngIf="amount.invalid && amount.touched">Amount is required</span>
+  </div>
+  <div class="form-control">
+    <label class="label">Description</label>
+    <input
+      type="text"
+      size="30"
+      pInputText
+      name="description"
+      #description="ngModel"
+      required
+      ngModel>
+      <span class="error-message" *ngIf="description.invalid && description.touched">Description is required</span>
+  </div>
+  <button pButton type="submit" label="Add" class="ui-button-raised" [disabled]="form.invalid"></button>
+</form>

@@ -1,0 +1,23 @@
+<span class="card-title">Add Category</span>
+<form class="card-content" #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <div class="form-control">
+    <label class="label" for="name">Name</label>
+    <input id="name" type="text" size="30" pInputText required #name="ngModel" name="name" ngModel>
+    <span class="error-message" *ngIf="name.invalid && name.touched">Name is required</span>
+  </div>
+  <div class="form-control">
+    <label class="label" for="limit">Limit</label>
+    <input
+      id="limit"
+      type="number"
+      size="30"
+      pInputText
+      #limit="ngModel"
+      name="limit"
+      [ngModel]="0"
+      min="0">
+      <span class="error-message" *ngIf="limit.invalid && limit.touched">Limit is required</span>
+  </div>
+  <button pButton type="submit" label="Add" class="ui-button-raised" [disabled]="form.invalid">
+  </button>
+</form>
