@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+
 import { UsersService } from 'src/app/shared/services/users.service';
 import { User } from 'src/app/shared/models/user.model';
-import { Router } from '@angular/router';
+import * as fromApp from '../../store/app.reducer';
+import * as AuthActions from '../store/auth.actions';
 
 @Component({
   selector: 'app-registration',
@@ -12,8 +15,7 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private usersService: UsersService,
-    private router: Router) {}
+  constructor(private usersService: UsersService, private store: Store<fromApp.AppState>) {}
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -25,15 +27,7 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit() {
     const {email, password, name} = this.form.value;
-    const user = new User(email, password, name);
-    this.usersService.addUser(user)
-      .subscribe(() => {
-        this.router.navigate(['/login'], {
-          queryParams: {
-            canLogin: true
-          }
-        });
-      });
+    this.store.dispatch(new AuthActions.SignupStart(new User(email, password, name)));
   }
 
   checkEmailUsed(control: FormControl): Promise<any> {

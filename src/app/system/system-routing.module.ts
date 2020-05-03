@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
+
 import { SystemComponent } from './system.component';
 import { BillComponent } from './bill/bill.component';
 import { HistoryComponent } from './history/history.component';

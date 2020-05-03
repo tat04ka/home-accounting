@@ -6,9 +6,9 @@
     <app-add-event [categories]="categories"></app-add-event>
   </div>
   <div class="card">
-    <app-add-category (onCategoryAdd)="newCategoryAdded($event)"></app-add-category>
+    <app-add-category></app-add-category>
   </div>
   <div class="card">
-    <app-edit-category [categories]="categories" (onCategoryEdit)="categoryUpdated($event)"></app-edit-category>
+    <app-edit-category [categories]="categories"></app-edit-category>
   </div>
 </div>

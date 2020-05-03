@@ -12,16 +12,13 @@ import { PlanningComponent } from './planning/planning.component';
 import { RecordComponent } from './record/record.component';
 import { AccountComponent } from './bill/account/account.component';
 import { ExchangeRatesComponent } from './bill/exchange-rates/exchange-rates.component';
-import { AccountService } from './shared/services/account.service';
 import { AddEventComponent } from './record/add-event/add-event.component';
 import { AddCategoryComponent } from './record/add-category/add-category.component';
 import { EditCategoryComponent } from './record/edit-category/edit-category.component';
-import { CategoriesService } from './shared/services/categories.service';
 import { DropdownDirective } from './shared/directives/dropdown.directive';
 import { HoverDirective } from './shared/directives/hover.directive';
 import { WhileDirective } from './shared/directives/while.directive';
 import { FormatNumberPipe } from './shared/pipes/format-number.pipe';
-import { EventsService } from './shared/services/events.service';
 
 @NgModule({
   imports: [
@@ -48,10 +45,7 @@ import { EventsService } from './shared/services/events.service';
     FormatNumberPipe
   ],
   providers: [
-    AccountService,
-    CategoriesService,
-    DecimalPipe,
-    EventsService
+    DecimalPipe
   ]
 })
 export class SystemModule {}

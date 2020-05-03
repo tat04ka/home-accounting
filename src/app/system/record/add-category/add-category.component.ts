@@ -1,25 +1,19 @@
-import { Component, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CategoriesService } from '../../shared/services/categories.service';
+import { Store } from '@ngrx/store';
+
 import { Category } from '../../shared/models/category.model';
-import { Subscription } from 'rxjs';
+import * as fromApp from '../../../store/app.reducer';
+import * as RecordActions from '../store/record.actions';
 
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
   styleUrls: ['./add-category.component.scss']
 })
-export class AddCategoryComponent implements OnDestroy {
-  sub1: Subscription;
-  @Output() onCategoryAdd = new EventEmitter<Category>();
+export class AddCategoryComponent {
 
-  constructor(private categoriesService: CategoriesService) {}
-
-  ngOnDestroy() {
-    if (this.sub1) {
-      this.sub1.unsubscribe();
-    }
-  }
+  constructor(private store: Store<fromApp.AppState>) {}
 
   onSubmit(form: NgForm) {
     let { name, limit } = form.value;
@@ -28,11 +22,12 @@ export class AddCategoryComponent implements OnDestroy {
     }
 
     const category = new Category(name, limit);
-    this.sub1 = this.categoriesService.addCategory(category)
-      .subscribe((category: Category) => {
+    this.store.dispatch(new RecordActions.AddCategoryStart(category));
+    this.store.select('record').subscribe(recordState => {
+      if (recordState.actionFinished && recordState.actionFinished === RecordActions.ADD_CATEGORY) {
         form.reset();
         form.form.patchValue({limit: 0});
-        this.onCategoryAdd.emit(category);
-      });
+      }
+    });
   }
 }

@@ -5,22 +5,15 @@
       "password": "12345678",
       "name": "test",
       "id": 1
-    },
-    {
-      "email": "test123@gmail.com",
-      "password": "123321",
-      "name": "123321",
-      "id": 2
     }
   ],
   "account": {
-    "value": 10000,
-    "currency": "UAH"
+    "value": 10000
   },
   "categories": [
     {
       "name": "Home",
-      "capacity": 1500,
+      "capacity": 2000,
       "id": 1
     },
     {
@@ -29,19 +22,9 @@
       "id": 2
     },
     {
-      "id": 3,
       "name": "Car",
-      "capacity": 7000
-    },
-    {
-      "name": "test90",
-      "capacity": 5,
-      "id": 4
-    },
-    {
-      "name": "fdr",
-      "capacity": 80,
-      "id": 5
+      "capacity": 9000,
+      "id": 3
     }
   ],
   "events": [

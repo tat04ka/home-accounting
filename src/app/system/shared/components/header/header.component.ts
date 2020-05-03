@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/shared/services/auth.service';
-import { Router } from '@angular/router';
-import { User } from 'src/app/shared/models/user.model';
+import { Store } from '@ngrx/store';
+
+import * as fromApp from 'src/app/store/app.reducer';
+import * as AuthActions from 'src/app/auth/store/auth.actions';
 
 @Component({
   selector: 'app-header',
@@ -10,24 +11,15 @@ import { User } from 'src/app/shared/models/user.model';
 })
 export class HeaderComponent implements OnInit {
   date: Date = new Date();
-  isDropdownOpened = false;
-  user: User;
+  name: string;
 
-  constructor(
-    private authService: AuthService,
-    private router: Router
-  ) {}
+  constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit() {
-    this.user = JSON.parse(window.localStorage.getItem('user'));
-  }
-
-  toggleDropdown() {
-    this.isDropdownOpened = !this.isDropdownOpened;
+    this.name = window.localStorage.getItem('name');
   }
 
   logout() {
-    this.authService.logout();
-    this.router.navigate(['/login']);
+    this.store.dispatch(new AuthActions.Logout());
   }
 }
